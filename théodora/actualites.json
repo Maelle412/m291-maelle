@@ -1,0 +1,34 @@
+[
+    {
+        "titre":  "Fashion Designa : les références cachées du clip",
+        "categorie":  "clip",
+        "resume":  "Mondrian, Warhol, Ocelot : décrypter l\u0027univers visuel.",
+        "date":  "2025-06-04",
+        "dureeLectureMinutes":  3,
+        "page":  "article.html"
+    },
+    {
+        "titre":  "MEGA BBL : la réédition et ses invités",
+        "categorie":  "album",
+        "resume":  "Les nouvelles collaborations et les morceaux à redécouvrir.",
+        "date":  "2025-05-28",
+        "dureeLectureMinutes":  4,
+        "page":  "article.html"
+    },
+    {
+        "titre":  "Un univers entre lune et étoiles",
+        "categorie":  "live",
+        "resume":  "Dans les coulisses de la scénographie et des lumières.",
+        "date":  "2025-05-18",
+        "dureeLectureMinutes":  2,
+        "page":  "article.html"
+    },
+    {
+        "titre":  "Révélation féminine sur scène",
+        "categorie":  "live",
+        "resume":  "Retour sur une performance pleine d\u0027énergie.",
+        "date":  "2025-05-10",
+        "dureeLectureMinutes":  3,
+        "page":  "article.html"
+    }
+]

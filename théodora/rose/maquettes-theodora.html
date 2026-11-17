@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Théodora News – Maquettes</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#FFB3D3;--hot:#E5177A;--ink:#14060D;--cream:#FFF4EA;--yel:#FFD21F;--blue:#1F4FD8;--red:#E8262B}
+*{box-sizing:border-box}
+body{margin:0;background:#FFE0EE;font-family:'Poppins',system-ui,sans-serif}
+#overview{display:flex;gap:56px;justify-content:center;padding:56px}
+.phone{width:414px;height:868px;border-radius:56px;background:var(--ink);padding:12px}
+.screen{width:390px;height:844px;border-radius:44px;overflow:hidden;background:var(--pink);color:var(--ink);position:relative}
+.top{height:76px;background:var(--ink);display:flex;align-items:flex-end;justify-content:space-between;padding:0 18px 12px}
+.logo{display:flex;align-items:center;gap:8px;color:var(--pink);font-weight:800;font-size:18px;letter-spacing:-.02em}
+.logo svg{width:34px;height:20px;color:var(--hot)}
+.btn{border:2px solid var(--pink);background:transparent;color:var(--pink);font:700 12px 'Poppins';padding:7px 14px;border-radius:999px}
+/* hero */
+.hero{height:396px;position:relative;background:var(--hot);border-bottom:3px solid var(--ink);overflow:hidden}
+.hero>svg{position:absolute;inset:0;width:100%;height:100%}
+.hero .in{position:absolute;left:0;right:0;bottom:34px;text-align:center;padding:0 28px}
+.hero h1{margin:0 0 10px;font-size:37px;line-height:1;font-weight:800;letter-spacing:-.035em;color:var(--cream);text-shadow:3px 3px 0 var(--ink)}
+.hero p{margin:0 auto 18px;font-size:14px;line-height:1.4;font-weight:600;max-width:260px}
+.cta{border:0;background:var(--ink);color:var(--pink);font:800 14px 'Poppins';padding:13px 30px;border-radius:999px;box-shadow:3px 3px 0 var(--yel)}
+/* cards */
+.sec{padding:20px 16px 0}
+h2{margin:0 0 12px;font-size:19px;font-weight:800;letter-spacing:-.02em}
+.card{background:var(--cream);border:2px solid var(--ink);border-radius:20px;box-shadow:3px 3px 0 var(--ink)}
+.hc{display:flex;gap:12px;padding:10px;margin-bottom:14px}
+.th{flex:none;width:88px;height:88px;border-radius:12px;border:2px solid var(--ink);display:block}
+.tag{font-size:11px;font-weight:700;color:var(--hot)}
+.ttl{font-size:14px;font-weight:700;line-height:1.2;margin:2px 0 4px;letter-spacing:-.01em}
+.txt{font-size:11.5px;line-height:1.35;color:#4a2a3a}
+.more{text-align:center;font-weight:700;font-size:13px;padding-top:2px}
+.more svg{display:block;margin:4px auto 0}
+/* screen 2 */
+.bar{margin:16px 16px 0;background:var(--hot);color:var(--cream);font-weight:800;font-size:24px;letter-spacing:-.03em;padding:10px 16px;border:2px solid var(--ink);border-radius:14px;box-shadow:3px 3px 0 var(--ink)}
+.chips{display:flex;gap:8px;padding:14px 16px 4px}
+.chip{border:2px solid var(--ink);background:var(--cream);font:700 12px 'Poppins';padding:7px 0;flex:1;border-radius:12px;color:var(--ink)}
+.chip.on{background:var(--yel)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;padding:12px 16px}
+.g{padding:8px;display:flex;flex-direction:column;height:272px}
+.g .th{width:100%;height:118px;margin-bottom:8px}
+.g .ttl{font-size:13px}
+.g .txt{font-size:11px;flex:1}
+.foot{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;font-weight:600;color:#4a2a3a}
+.save{width:28px;height:28px;border:0;border-radius:9px;background:var(--ink);display:grid;place-items:center;padding:0}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="lips" viewBox="0 0 100 60"><path fill="currentColor" d="M4 30C20 6 38 6 50 16C62 6 80 6 96 30C80 55 62 56 50 54C38 56 20 55 4 30Z"/><path d="M6 31C32 39 68 39 94 31" stroke="#FFF4EA" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="star" viewBox="-10 -10 20 20"><path d="M0-10L2.5-2.5L10 0L2.5 2.5L0 10L-2.5 2.5L-10 0L-2.5-2.5Z" fill="currentColor"/></symbol>
+<mask id="cres"><rect x="-50" y="-50" width="100" height="100" fill="#fff"/><circle cx="14" cy="-8" r="34" fill="#000"/></mask>
+<symbol id="tA" viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice"><rect width="160" height="120" fill="#FFF4EA"/><rect width="62" height="52" fill="#E8262B"/><rect x="102" y="72" width="58" height="48" fill="#1F4FD8"/><rect x="118" width="42" height="30" fill="#FFD21F"/><rect x="62" width="5" height="120" fill="#14060D"/><rect y="52" width="160" height="5" fill="#14060D"/><rect x="102" y="52" width="5" height="68" fill="#14060D"/></symbol>
+<symbol id="tB" viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice"><rect width="160" height="120" fill="#FF7FB6"/><use href="#lips" x="20" y="20" width="120" height="80" style="color:#E5177A"/></symbol>
+<symbol id="tC" viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice"><rect width="160" height="120" fill="#1F2A7A"/><g transform="translate(80 62)"><circle r="34" fill="#FFF4EA" mask="url(#cres)" transform="rotate(-20)"/></g><use href="#star" x="18" y="16" width="14" height="14" style="color:#FFD21F"/><use href="#star" x="124" y="24" width="10" height="10" style="color:#FFF4EA"/><use href="#star" x="118" y="86" width="16" height="16" style="color:#FFD21F"/><use href="#star" x="26" y="82" width="8" height="8" style="color:#FFF4EA"/></symbol>
+<symbol id="tD" viewBox="0 0 160 120" preserveAspectRatio="xMidYMid slice"><rect width="160" height="120" fill="#FFD21F"/><circle cx="80" cy="50" r="24" fill="#14060D"/><path d="M28 120C30 84 52 76 80 76C108 76 130 84 132 120Z" fill="#14060D"/><circle cx="80" cy="50" r="24" fill="none"/></symbol>
+</defs></svg>
+
+<div id="overview">
+<!-- ÉCRAN 1 -->
+<div class="phone"><div class="screen" id="s1">
+  <div class="top"><div class="logo"><svg><use href="#lips"/></svg>Théodora</div><button class="btn">S'abonner</button></div>
+  <section class="hero">
+    <svg viewBox="0 0 390 396" preserveAspectRatio="xMidYMid slice">
+      <rect x="0" y="0" width="120" height="96" fill="#FFD21F"/><rect x="290" y="0" width="100" height="60" fill="#1F4FD8"/><rect x="0" y="106" width="70" height="60" fill="#FFB3D3"/>
+      <rect x="120" width="5" height="166" fill="#14060D"/><rect x="0" y="96" width="390" height="5" fill="#14060D"/><rect x="290" width="5" height="166" fill="#14060D"/>
+      <circle cx="205" cy="136" r="32" fill="#FFF4EA"/><circle cx="220" cy="128" r="26" fill="#E5177A"/>
+      <use href="#star" x="142" y="112" width="16" height="16" style="color:#FFD21F"/><use href="#star" x="312" y="80" width="14" height="14" style="color:#FFF4EA"/><use href="#star" x="92" y="134" width="12" height="12" style="color:#FFF4EA"/><use href="#star" x="326" y="128" width="20" height="20" style="color:#FFD21F"/>
+    </svg>
+    <div class="in"><h1>Toute l'actu de Théodora</h1><p>Clips, albums et concerts, au même endroit.</p><button class="cta">Lire les actus</button></div>
+  </section>
+  <section class="sec"><h2>À la une</h2>
+    <article class="card hc"><svg class="th"><use href="#tA"/></svg><div><div class="tag">Clip</div><div class="ttl">Fashion Designa : les références cachées du clip</div><div class="txt">Mondrian, Warhol, Ocelot : on décrypte l'univers visuel.</div></div></article>
+    <article class="card hc"><svg class="th"><use href="#tB"/></svg><div><div class="tag">Album</div><div class="ttl">MEGA BBL : les featurings de la réédition</div><div class="txt">Jul, Luidji, Juliette Armanet… qui est sur quel titre.</div></div></article>
+    <div class="more">Voir tout<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#14060D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l5 5 5-5"/></svg></div>
+  </section>
+</div></div>
+
+<!-- ÉCRAN 2 -->
+<div class="phone"><div class="screen" id="s2">
+  <div class="top"><div class="logo"><svg><use href="#lips"/></svg>Théodora</div><button class="btn">S'abonner</button></div>
+  <div class="bar">Actualités</div>
+  <div class="chips"><button class="chip on">Tout</button><button class="chip">Clips</button><button class="chip">Albums</button><button class="chip">Live</button></div>
+  <div class="grid">
+    <article class="card g"><svg class="th"><use href="#tA"/></svg><div class="ttl">Fashion Designa : les références du clip</div><div class="txt">Un clip pensé comme une œuvre d'art, signé Melchior Leroux.</div><div class="foot"><span>Clip · 3 min</span><button class="save"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="#FFB3D3" stroke-width="2" stroke-linejoin="round"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></article>
+    <article class="card g"><svg class="th"><use href="#tB"/></svg><div class="ttl">MEGA BBL : la réédition en détail</div><div class="txt">25 titres et des collaborations aux univers très variés.</div><div class="foot"><span>Album · 4 min</span><button class="save"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="#FFB3D3" stroke-width="2" stroke-linejoin="round"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></article>
+    <article class="card g"><svg class="th"><use href="#tC"/></svg><div class="ttl">Un univers entre lune et étoiles</div><div class="txt">Le clin d'œil au Petit Prince dans ses visuels.</div><div class="foot"><span>Univers · 2 min</span><button class="save"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="#FFB3D3" stroke-width="2" stroke-linejoin="round"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></article>
+    <article class="card g"><svg class="th"><use href="#tD"/></svg><div class="ttl">Révélation féminine aux Flammes</div><div class="txt">Retour sur le prix qui a lancé sa consécration.</div><div class="foot"><span>Récompense · 2 min</span><button class="save"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="#FFB3D3" stroke-width="2" stroke-linejoin="round"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></article>
+  </div>
+</div></div>
+</div>
+</body></html>

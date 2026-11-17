@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Toute l'actualité de Théodora : clips, albums et concerts." />
+    <title>Théodora — Toute l'actu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="index.html" aria-label="Théodora — accueil">
+          <span class="brand-lip" aria-hidden="true"></span>
+          <span>Théodora</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
+        <div class="search-wrap" role="search">
+          <label class="sr-only" for="site-search">Rechercher</label>
+          <input id="site-search" class="search-input" type="search" name="q" placeholder="Rechercher..." aria-label="Rechercher dans les actualités" />
+        </div>
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+          <a class="active" href="index.html" aria-current="page">Accueil</a>
+          <a href="actualites.html">Actualités</a>
+          <a href="article.html">À la une</a>
+        </nav>
+        <a class="subscribe-btn" href="#newsletter">S'abonner</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <div class="hero-copy">
+            <span class="eyebrow">L'univers de Théodora</span>
+            <h1>Toute l'actu de <span>Théodora</span></h1>
+            <p>Clips, albums et concerts : les nouveautés et les histoires à découvrir, au même endroit.</p>
+            <div class="hero-actions">
+              <a class="button button-dark" href="actualites.html">Lire les actus <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="#a-la-une">Découvrir à la une <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-note"><span class="note-star" aria-hidden="true">✦</span> La musique, côté coulisses.</div>
+          </div>
+          <div class="hero-art" aria-label="Composition graphique colorée inspirée de l'univers de Théodora">
+            <div class="hero-art-top">
+              <span class="art-block art-block-yellow"></span>
+              <span class="art-block art-block-pink"></span>
+              <span class="art-block art-block-blue"></span>
+            </div>
+            <div class="hero-art-bottom">
+              <span class="art-block art-block-soft"></span>
+              <span class="art-moon" aria-hidden="true"></span>
+              <span class="art-spark" aria-hidden="true">✦</span>
+            </div>
+            <span class="art-caption">En mouvement<br />en couleurs</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="a-la-une">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow eyebrow-pink">À ne pas manquer</span>
+            <h2>À la une</h2>
+          </div>
+          <a class="text-link" href="actualites.html">Toutes les actualités <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="featured-layout">
+          <a class="feature-card" href="article.html">
+            <div class="feature-art" aria-hidden="true">
+              <span class="feature-red"></span><span class="feature-cream"></span>
+              <span class="feature-blue"></span><span class="feature-yellow"></span>
+            </div>
+            <div class="feature-copy">
+              <span class="category">Clip</span>
+              <p class="card-date">4 juin 2025 · 3 min de lecture</p>
+              <h3>Fashion Designa : les références cachées du clip</h3>
+              <p class="card-description">Ocelot, Warhol, Mondrian : on décrypte les clins d'œil qui composent l'univers visuel du clip.</p>
+              <span class="read-more">Lire l'article <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+          <div class="side-stories">
+            <a class="side-story" href="article.html">
+              <span class="side-art side-art-lips" aria-hidden="true">✦</span>
+              <span class="side-copy">
+                <span class="category">Album</span>
+                <span class="side-title">MEGA BBL : les secrets de la réédition</span>
+                <span class="side-date">Albums · 4 min</span>
+              </span>
+              <span class="story-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="side-story" href="actualites.html">
+              <span class="side-art side-art-moon" aria-hidden="true"><span></span></span>
+              <span class="side-copy">
+                <span class="category category-blue">Live</span>
+                <span class="side-title">Un univers entre lune et étoiles</span>
+                <span class="side-date">Concerts · 2 min</span>
+              </span>
+              <span class="story-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="latest-section">
+        <div class="container section">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow eyebrow-yellow">Clips, albums & live</span>
+              <h2>Les dernières actus</h2>
+            </div>
+            <a class="text-link" href="actualites.html">Voir tout <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="latest-grid">
+            <a class="latest-card" href="article.html">
+              <div class="latest-art latest-art-red" aria-hidden="true"><span></span><i></i></div>
+              <div class="latest-copy"><span class="category">Clip</span><h3>Fashion Designa : les références cachées du clip</h3><span class="side-date">4 juin 2025 · 3 min</span></div>
+            </a>
+            <a class="latest-card" href="article.html">
+              <div class="latest-art latest-art-pink" aria-hidden="true"><span class="lip-shape"></span></div>
+              <div class="latest-copy"><span class="category">Album</span><h3>MEGA BBL : la réédition et ses invités</h3><span class="side-date">28 mai 2025 · 4 min</span></div>
+            </a>
+            <a class="latest-card" href="actualites.html">
+              <div class="latest-art latest-art-blue" aria-hidden="true"><span class="mini-moon"></span><b>✦</b></div>
+              <div class="latest-copy"><span class="category category-blue">Live</span><h3>Une tournée entre lune et étoiles</h3><span class="side-date">18 mai 2025 · 2 min</span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter" id="newsletter">
+        <div class="container newsletter-content">
+          <div><span class="eyebrow eyebrow-yellow">Dans ta boîte mail</span><h2>Reste dans la boucle.</h2><p>Les dernières actus de Théodora, sans en manquer une.</p></div>
+          <form class="newsletter-form">
+            <label class="sr-only" for="email">Adresse e-mail</label>
+            <input id="email" name="email" type="email" placeholder="Ton adresse e-mail" required />
+            <button class="button button-yellow" type="submit">Je m'abonne <span aria-hidden="true">→</span></button>
+            <p class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a class="brand" href="index.html"><span class="brand-lip" aria-hidden="true"></span><span>Théodora</span></a>
+        <p>Le son, les images et les histoires.</p>
+        <nav aria-label="Navigation de pied de page"><a href="index.html">Accueil</a><a href="actualites.html">Actualités</a><a href="article.html">À la une</a></nav>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

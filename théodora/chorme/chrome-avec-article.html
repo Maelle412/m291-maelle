@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Théodora News – Violet, rose, argenté</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"><style>
+:root{--deep:#2A0E5E;--vio:#7B2CFF;--pink:#FF5FB5;--lav:#EDE3FF;--chrome:linear-gradient(180deg,#FFFFFF 0%,#D5D8E3 30%,#8E93A6 52%,#E9EBF2 70%,#B4B8C8 100%)}
+*{box-sizing:border-box}
+body{margin:0;background:#D8C8F7;font-family:'Poppins',system-ui,sans-serif}
+#overview{display:flex;gap:40px;justify-content:center;padding:56px}
+.phone{width:414px;height:868px;border-radius:56px;background:var(--chrome);padding:5px;box-shadow:0 20px 50px rgba(42,14,94,.35)}
+.phone>.in{width:100%;height:100%;border-radius:51px;background:#0c0420;padding:7px}
+.screen{width:390px;height:844px;border-radius:44px;overflow:hidden;background:var(--lav);color:var(--deep)}
+.top{height:76px;background:var(--deep);display:flex;align-items:flex-end;justify-content:space-between;padding:0 18px 12px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.03em;color:transparent;background:var(--chrome);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 1px 0 rgba(255,95,181,.8))}
+.btn{border:0;background:linear-gradient(135deg,var(--pink),#FF9AD2);color:var(--deep);font:700 12px 'Poppins';padding:8px 15px;border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.hero{height:396px;position:relative;overflow:hidden;text-align:center;background:radial-gradient(120% 80% at 85% 0%,#B25CFF 0%,transparent 55%),linear-gradient(165deg,#4A18C4 0%,var(--vio) 45%,#E24AAA 100%)}
+.orb{position:absolute;border-radius:50%}
+.o1{width:150px;height:150px;right:-38px;top:-30px;background:radial-gradient(circle at 32% 28%,#fff 0%,#D7DAE6 22%,#8A8FA3 55%,#3B3F55 78%,#C7CADA 100%);box-shadow:0 12px 30px rgba(20,4,60,.4)}
+.o2{width:62px;height:62px;left:26px;top:70px;background:radial-gradient(circle at 32% 28%,#fff 0%,#FFB6DE 25%,var(--pink) 60%,#B01F77 100%)}
+.o3{width:34px;height:34px;right:52px;top:210px;background:radial-gradient(circle at 32% 28%,#fff 0%,#D7DAE6 30%,#8A8FA3 75%,#eee 100%)}
+.sp{position:absolute;width:20px;height:20px;filter:drop-shadow(0 0 4px #fff)}
+.hero .c{position:absolute;left:0;right:0;bottom:44px;padding:0 26px}
+.hero h1{margin:0 0 12px;font-size:40px;line-height:1;font-weight:800;letter-spacing:-.04em;color:transparent;background:var(--chrome);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 3px 0 var(--deep))}
+.hero p{margin:0 auto 20px;font-size:14px;line-height:1.45;max-width:250px;color:#F5E9FF}
+.cta{border:2px solid #fff;background:var(--chrome);color:var(--deep);font:800 14px 'Poppins';padding:12px 30px;border-radius:999px;box-shadow:0 6px 0 var(--deep),0 10px 20px rgba(255,95,181,.5)}
+.sec{padding:20px 16px 0}
+h2{margin:0 0 12px;font-size:19px;font-weight:800;letter-spacing:-.02em}
+.card{background:rgba(255,255,255,.82);border:2px solid #fff;border-radius:22px;box-shadow:0 0 0 1.5px #B4B8C8,0 8px 20px rgba(123,44,255,.18)}
+.hc{display:flex;gap:12px;padding:10px;margin-bottom:14px}
+.th{flex:none;width:88px;height:88px;border-radius:14px;border:2px solid #fff;box-shadow:0 0 0 1.5px #9EA3B6}
+.ph{background:linear-gradient(135deg,#F3F4F8,#B9BDCC 55%,#EEF0F6);display:grid;place-items:center}
+.tag{display:inline-block;font-size:10.5px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--vio),var(--pink));padding:1px 9px;border-radius:99px}
+.ttl{font-size:14px;font-weight:700;line-height:1.2;margin:4px 0 3px;letter-spacing:-.01em}
+.txt{font-size:11.5px;line-height:1.35;color:#5a4a80}
+.more{text-align:center;font-weight:700;font-size:13px}
+.more svg{display:block;margin:4px auto 0}
+.bar{margin:16px 16px 0;padding:10px 18px;border-radius:16px;background:linear-gradient(135deg,var(--deep),var(--vio) 60%,var(--pink));font-weight:800;font-size:25px;letter-spacing:-.03em;border:2px solid #fff;box-shadow:0 0 0 1.5px #B4B8C8}
+.bar span{color:transparent;background:var(--chrome);-webkit-background-clip:text;background-clip:text}
+.chips{display:flex;gap:8px;padding:14px 16px 4px}
+.chip{flex:1;border:2px solid #fff;background:var(--chrome);font:700 12px 'Poppins';padding:7px 0;border-radius:999px;color:var(--deep);box-shadow:0 0 0 1.5px #B4B8C8}
+.chip.on{background:linear-gradient(135deg,var(--vio),var(--pink));color:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;padding:12px 16px}
+.g{padding:8px;display:flex;flex-direction:column;height:272px}
+.g .th{width:100%;height:118px;margin-bottom:8px}
+.g .ttl{font-size:13px}.g .txt{font-size:11px;flex:1}
+.foot{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;font-weight:600;color:#5a4a80}
+.save{width:28px;height:28px;border:0;border-radius:50%;background:var(--deep);display:grid;place-items:center;padding:0}
+
+.screen{position:relative}
+.ib{width:36px;height:36px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;padding:0;background:linear-gradient(135deg,var(--pink),#FF9AD2);box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.ahero{width:100%;height:210px;background:linear-gradient(135deg,#F6F7FA,#AEB3C5 55%,#EEF0F6);display:grid;place-items:center;border-bottom:2px solid #fff;box-shadow:0 2px 0 #B4B8C8}
+.art{padding:16px 18px 0}
+.tg{display:inline-block;font-weight:700;font-size:11px;padding:2px 10px;border-radius:99px;color:#fff;background:linear-gradient(135deg,var(--vio),var(--pink))}
+.art h1{font-size:25px;line-height:1.08;font-weight:800;letter-spacing:-.03em;margin:9px 0 6px}
+.mt{font-size:11.5px;font-weight:600;color:#5a4a80}
+.lead{font-size:14px;font-weight:700;line-height:1.42;margin:12px 0!important}
+.refs{display:flex;gap:6px;margin-bottom:12px}
+.refs span{font:700 11px 'Poppins';padding:4px 11px;border-radius:99px;border:2px solid #fff;background:var(--chrome);box-shadow:0 0 0 1.5px #B4B8C8;color:var(--deep)}
+.art p{font-size:13px;line-height:1.55;margin:0 0 10px;color:#3a2a66}
+.fade{position:absolute;left:0;right:0;bottom:72px;height:70px;background:linear-gradient(rgba(237,227,255,0),var(--lav))}
+.abar{position:absolute;left:0;right:0;bottom:0;height:72px;background:var(--deep);display:flex;gap:10px;align-items:center;padding:0 16px}
+.abar button{height:44px;border-radius:999px;font:800 13px 'Poppins';display:flex;align-items:center;justify-content:center;gap:7px}
+.b1{flex:1;border:2px solid #8E93A6;background:transparent;color:#EDE3FF}
+.b2{flex:1.2;border:2px solid #fff;background:var(--chrome);color:var(--deep);box-shadow:0 3px 0 var(--pink)}
+</style></head><body><div id="overview">
+<div class="phone"><div class="in"><div class="screen" id="s1"><div class="top"><div class="logo">Théodora</div><button class="btn">S'abonner</button></div>
+<section class="hero"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><svg class="sp" style="left:150px;top:58px" viewBox="-10 -10 20 20"><path d="M0-10L2-2L10 0L2 2L0 10L-2 2L-10 0L-2-2Z" fill="#fff"/></svg><svg class="sp" style="left:262px;top:112px;width:14px;height:14px" viewBox="-10 -10 20 20"><path d="M0-10L2-2L10 0L2 2L0 10L-2 2L-10 0L-2-2Z" fill="#fff"/></svg><svg class="sp" style="left:40px;top:150px;width:14px;height:14px" viewBox="-10 -10 20 20"><path d="M0-10L2-2L10 0L2 2L0 10L-2 2L-10 0L-2-2Z" fill="#fff"/></svg><svg class="sp" style="right:22px;top:290px;width:16px;height:16px" viewBox="-10 -10 20 20"><path d="M0-10L2-2L10 0L2 2L0 10L-2 2L-10 0L-2-2Z" fill="#fff"/></svg>
+<div class="c"><h1>Toute l'actu de Théodora</h1><p>Clips, albums et concerts, au même endroit.</p><button class="cta">Lire les actus</button></div></section>
+<section class="sec"><h2>À la une</h2>
+<article class="card hc"><div class="th ph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#2A0E5E" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div><div><div class="tag">Clip</div><div class="ttl">Fashion Designa : les références cachées du clip</div><div class="txt">Mondrian, Warhol, Ocelot : on décrypte l'univers visuel.</div></div></article>
+<article class="card hc"><div class="th ph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#2A0E5E" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div><div><div class="tag">Album</div><div class="ttl">MEGA BBL : les featurings de la réédition</div><div class="txt">Jul, Luidji, Juliette Armanet et les autres.</div></div></article>
+<div class="more">Voir tout<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#2A0E5E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l5 5 5-5"/></svg></div></section></div></div></div>
+<div class="phone"><div class="in"><div class="screen" id="s2"><div class="top"><div class="logo">Théodora</div><button class="btn">S'abonner</button></div>
+<div class="bar"><span>Actualités</span></div>
+<div class="chips"><button class="chip on">Tout</button><button class="chip">Clips</button><button class="chip">Albums</button><button class="chip">Live</button></div>
+<div class="grid">
+<article class="card g"><div class="th ph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#2A0E5E" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div><div class="ttl">Fashion Designa : les références du clip</div><div class="txt">Un clip pensé comme une œuvre d'art, signé Melchior Leroux.</div><div class="foot"><span>Clip · 3 min</span><button class="save"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="#FF8FCB" stroke-width="2" stroke-linejoin="round"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></article>
+<article class="card g"><div class="th ph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#2A0E5E" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div><div class="ttl">MEGA BBL : la réédition en détail</div><div class="txt">25 titres et des collaborations aux univers très variés.</div><div class="foot"><span>Album · 4 min</span><button class="save"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="#FF8FCB" stroke-width="2" stroke-linejoin="round"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></article>
+<article class="card g"><div class="th ph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#2A0E5E" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div><div class="ttl">Un univers entre lune et étoiles</div><div class="txt">Le clin d'œil au Petit Prince dans ses visuels.</div><div class="foot"><span>Univers · 2 min</span><button class="save"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="#FF8FCB" stroke-width="2" stroke-linejoin="round"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></article>
+<article class="card g"><div class="th ph"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#2A0E5E" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div><div class="ttl">Révélation féminine aux Flammes</div><div class="txt">Retour sur le prix qui a lancé sa consécration.</div><div class="foot"><span>Prix · 2 min</span><button class="save"><svg width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="#FF8FCB" stroke-width="2" stroke-linejoin="round"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></article>
+</div></div></div></div><div class="phone"><div class="in"><div class="screen" id="s3"><div class="top"><button class="ib"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A0E5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="logo">Théodora</div><button class="ib"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2A0E5E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M8 8l4-4 4 4M5 13v6h14v-6"/></svg></button></div>
+<div class="ahero"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#2A0E5E" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div><div class="art"><span class="tg">Clip</span><h1>Fashion Designa : les références cachées du clip</h1><div class="mt">Clip · 3 min de lecture</div>
+<p class="lead">Pour « Fashion Designa », Théodora s'est entourée de Melchior Leroux : silhouettes en ombres découpées, aplats colorés et clins d'œil à l'histoire de l'art.</p>
+<div class="refs"><span>Ocelot</span><span>Warhol</span><span>Mondrian</span><span>Dalí</span></div>
+<p>Dévoilé le 4 juin 2025, le clip a vite été salué pour son inventivité. Son esthétique s'inspire du cinéma de Michel Ocelot, le créateur de Kirikou, avec des personnages en ombre chinoise comme dans Azur et Asmar.</p>
+<p>On y repère aussi les bouches de Warhol, les rectangles colorés de Mondrian, une allusion à Grace Jones vue par Jean-Paul Goude et le piano surréaliste de Dalí. Allongée sur la Lune, Théodora salue enfin Le Petit Prince.</p>
+<p>Le morceau, aux sonorités amapiano, est composé par son frère Jeez Suave, qui signe toutes ses chansons.</p></div><div class="fade"></div><div class="abar"><button class="b1"><svg width="14" height="16" viewBox="0 0 12 14" fill="none" stroke="#FF8FCB" stroke-width="2" stroke-linejoin="round"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg> Enregistrer</button><button class="b2">Lire l'article suivant</button></div></div></div></div></div></body></html>

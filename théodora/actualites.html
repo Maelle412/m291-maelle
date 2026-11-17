@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Toutes les actualités de Théodora : clips, albums et concerts." />
+    <title>Actualités — Théodora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="index.html" aria-label="Théodora — accueil"><span class="brand-lip" aria-hidden="true"></span><span>Théodora</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu"><span></span><span></span></button>
+        <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a><a class="active" href="actualites.html" aria-current="page">Actualités</a><a href="article.html">À la une</a>
+        </nav>
+        <a class="subscribe-btn" href="index.html#newsletter">S'abonner</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-intro">
+        <div class="container">
+          <span class="eyebrow">Clips · Albums · Concerts</span>
+          <h1>Les actualités</h1>
+          <p>Les nouveautés de Théodora, les coulisses et les histoires derrière la musique.</p>
+        </div>
+      </section>
+
+      <section class="container news-page-content" aria-label="Toutes les actualités">
+        <div class="news-search" role="search">
+          <label for="site-search">Chercher un clip ou un genre</label>
+          <input id="site-search" type="search" name="q" placeholder="Ex. Fashion Designa, album, live" />
+        </div>
+
+        <form class="proposal-form" id="proposer">
+          <h2>Proposer une actualité</h2>
+          <label for="proposal-title">Titre de l'actualité</label>
+          <input id="proposal-title" name="titre" type="text" />
+          <label for="proposal-category">Genre</label>
+          <select id="proposal-category" name="categorie">
+            <option value="">Choisir un genre</option>
+            <option value="clip">Clip</option>
+            <option value="album">Album</option>
+            <option value="live">Live</option>
+          </select>
+          <p id="erreurs" aria-live="polite"></p>
+          <button class="button button-dark" type="submit">Proposer l'actualité</button>
+        </form>
+
+        <div class="filter-row" role="group" aria-label="Filtrer les actualités">
+          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">Tout</button>
+          <button class="filter-button" type="button" data-filter="clip" aria-pressed="false">Clips</button>
+          <button class="filter-button" type="button" data-filter="album" aria-pressed="false">Albums</button>
+          <button class="filter-button" type="button" data-filter="live" aria-pressed="false">Live</button>
+        </div>
+
+        <div class="news-grid" id="news-grid" aria-live="polite" aria-busy="true">
+          <p class="news-state news-loading" role="status">Chargement des actualités…</p>
+        </div>
+        <p id="aucun-resultat" class="news-no-results" role="status" hidden>Aucune actualité ne correspond à votre recherche. Essayez un autre mot.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-content">
+      <a class="brand" href="index.html"><span class="brand-lip" aria-hidden="true"></span><span>Théodora</span></a>
+      <p>Le son, les images et les histoires.</p>
+      <nav aria-label="Navigation de pied de page"><a href="index.html">Accueil</a><a href="actualites.html">Actualités</a><a href="article.html">À la une</a></nav>
+    </div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

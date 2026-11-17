@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Théodora News</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFB3D3;--surface:#FFF4EA;--text:#14060D;--muted:#6a3a4e;--line:#14060D;--shadow:#14060D;--hot:#E5177A;--ink:#14060D;--cream:#FFF4EA;--yel:#FFD21F;--blue:#1F4FD8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d0b15;--surface:#2b1322;--text:#FFE9F2;--muted:#e0a9c4;--line:#FFB3D3;--shadow:#E5177A}}
+:root[data-theme="dark"]{--bg:#1d0b15;--surface:#2b1322;--text:#FFE9F2;--muted:#e0a9c4;--line:#FFB3D3;--shadow:#E5177A}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--ink);color:#FFB3D3}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.logo svg{width:38px;height:22px;color:var(--hot)}
+nav{display:flex;gap:26px;font-weight:600;font-size:14px}
+nav a:hover{color:var(--yel)}
+.btn{display:inline-block;border:3px solid var(--ink);background:var(--blue);color:var(--cream);font:800 14px 'Poppins',sans-serif;padding:11px 24px;border-radius:999px;box-shadow:4px 4px 0 var(--ink);cursor:pointer;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn.sm{padding:8px 18px;font-size:13px;border-color:var(--cream);box-shadow:none}
+.btn.ghost{background:var(--cream);color:var(--ink)}
+/* hero */
+.hero{background:var(--hot);border-bottom:4px solid var(--ink);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding-top:56px;padding-bottom:56px}
+.eyebrow{display:inline-block;background:var(--yel);color:var(--ink);border:2.5px solid var(--ink);font-weight:800;font-size:12px;padding:3px 12px;border-radius:99px;transform:rotate(-2deg)}
+.hero h1{margin:16px 0 14px;font-size:clamp(40px,7vw,78px);line-height:.95;font-weight:800;letter-spacing:-.04em;color:var(--cream);text-shadow:4px 4px 0 var(--ink)}
+.hero p{max-width:440px;font-size:17px;font-weight:600;color:var(--ink);margin:0 0 26px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.hero-art{width:100%;max-width:440px;justify-self:center;border:4px solid var(--ink);border-radius:26px;box-shadow:8px 8px 0 var(--ink);display:block;background:var(--cream)}
+/* sections */
+section.s{padding:52px 0 8px}
+h2{margin:0 0 22px;font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.03em}
+h2 span{background:linear-gradient(var(--hot),var(--hot)) 0 92%/100% 9px no-repeat;padding:0 4px}
+.card{background:var(--surface);border:3px solid var(--line);border-radius:22px;box-shadow:5px 5px 0 var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .12s}
+.card:hover{transform:translate(-2px,-2px)}
+.art{display:block;width:100%;aspect-ratio:16/10;border-bottom:3px solid var(--line)}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.tag{align-self:flex-start;background:var(--hot);color:var(--cream);font-weight:700;font-size:11px;padding:2px 11px;border-radius:99px}
+.ttl{font-weight:800;font-size:19px;line-height:1.15;letter-spacing:-.02em;margin:10px 0 6px}
+.txt{font-size:14px;color:var(--muted);margin:0 0 14px;flex:1}
+.meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:600;color:var(--muted)}
+.save{width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);background:var(--blue);display:grid;place-items:center;padding:0;cursor:pointer}
+.save svg{fill:none;stroke:var(--cream);stroke-width:2;stroke-linejoin:round}
+.save[aria-pressed="true"] svg{fill:var(--yel);stroke:var(--yel)}
+.feat{display:grid;grid-template-columns:1.35fr 1fr;gap:24px}
+.feat .big .art{aspect-ratio:16/9}
+.feat .big .ttl{font-size:27px}
+.side{display:grid;gap:24px}
+.side .card{flex-direction:row}
+.side .art{width:38%;aspect-ratio:auto;border-bottom:0;border-right:3px solid var(--line);height:auto}
+.side .ttl{font-size:16px}
+.side .txt{font-size:13px}
+/* filtres + grille */
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.chip{border:3px solid var(--line);background:var(--surface);color:var(--text);font:700 13px 'Poppins',sans-serif;padding:8px 18px;border-radius:999px;cursor:pointer;box-shadow:3px 3px 0 var(--shadow)}
+.chip[aria-pressed="true"]{background:var(--blue);color:var(--cream);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
+.card[hidden]{display:none}
+/* newsletter */
+.news{margin:60px 0 0;background:var(--ink);color:var(--cream);border-top:4px solid var(--ink)}
+.news .wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;padding-top:48px;padding-bottom:48px}
+.news h2{margin:0;color:#FFB3D3}
+.news p{margin:6px 0 0;color:#e8c9d8}
+.mail{display:flex;gap:10px;flex-wrap:wrap}
+.mail input{flex:1;min-width:200px;border:3px solid #FFB3D3;background:transparent;color:var(--cream);font:600 15px 'Poppins',sans-serif;padding:11px 18px;border-radius:999px;outline:none}
+.mail input:focus{border-color:var(--yel)}
+.ok{color:var(--yel);font-weight:700;margin-top:10px;min-height:24px}
+footer{background:var(--ink);color:#e8c9d8;font-size:13px;border-top:1px solid #3a1f2e}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;padding-bottom:26px}
+footer nav{gap:18px;font-weight:600}
+@media (max-width:860px){
+ .hero .wrap{grid-template-columns:1fr;padding-top:36px;padding-bottom:40px}
+ .hero-art{max-width:320px}
+ .feat,.news .wrap{grid-template-columns:1fr}
+ header nav{display:none}
+}
+@media (max-width:520px){.side .card{flex-direction:column}.side .art{width:100%;aspect-ratio:16/10;border-right:0;border-bottom:3px solid var(--line)}}
+
+nav a[aria-current="page"]{color:var(--yel)}
+.thero{background:var(--hot);border-bottom:4px solid var(--ink);padding:48px 0 44px}
+.thero h1{margin:14px 0 10px;font-size:clamp(44px,8vw,84px);line-height:.95;font-weight:800;letter-spacing:-.04em;color:var(--cream);text-shadow:4px 4px 0 var(--ink)}
+.thero p{margin:0;max-width:480px;font-size:17px;font-weight:600;color:var(--ink)}
+.next{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--surface);border:3px dashed var(--line);border-radius:22px;padding:22px 24px}
+.next h3{margin:0 0 4px;font-size:22px;font-weight:800;letter-spacing:-.02em}
+.next p{margin:0;max-width:520px;color:var(--muted);font-size:14px}
+h2.grp{margin-top:46px}
+.sub{margin:26px 0 14px;font-size:18px;font-weight:800;letter-spacing:-.02em}
+.shows{display:grid;gap:14px}
+.show{display:grid;grid-template-columns:84px 1fr auto;gap:16px;align-items:center;background:var(--surface);border:3px solid var(--line);border-radius:18px;box-shadow:4px 4px 0 var(--shadow);padding:10px 16px 10px 10px}
+.dt{border:3px solid var(--ink);border-radius:12px;text-align:center;padding:7px 0;line-height:1;color:var(--ink);background:var(--yel)}
+.dt b{display:block;font-size:26px;font-weight:800;margin-bottom:3px}
+.dt span{font-size:10.5px;font-weight:700;letter-spacing:.06em}
+.show:nth-child(4n+2) .dt{background:#FF7FB6}
+.show:nth-child(4n+3) .dt{background:var(--blue);color:var(--cream)}
+.show:nth-child(4n) .dt{background:#E8262B;color:var(--cream)}
+.show h3{margin:0;font-size:17px;font-weight:800;letter-spacing:-.02em}
+.show p{margin:0;font-size:13px;color:var(--muted);font-weight:600}
+.pill{font-size:11px;font-weight:700;padding:3px 12px;border-radius:99px;border:2px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.full{background:var(--yel);color:var(--ink);border-color:var(--ink)}
+@media (max-width:520px){.show{grid-template-columns:72px 1fr;padding-right:12px}.pill{grid-column:2;justify-self:start}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="lips" viewBox="0 0 100 60"><path fill="currentColor" d="M4 30C20 6 38 6 50 16C62 6 80 6 96 30C80 55 62 56 50 54C38 56 20 55 4 30Z"/><path d="M6 31C32 39 68 39 94 31" stroke="#FFF4EA" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="star" viewBox="-10 -10 20 20"><path d="M0-10L2.5-2.5L10 0L2.5 2.5L0 10L-2.5 2.5L-10 0L-2.5-2.5Z" fill="currentColor"/></symbol>
+<mask id="cres"><rect x="-50" y="-50" width="100" height="100" fill="#fff"/><circle cx="14" cy="-8" r="34" fill="#000"/></mask>
+<symbol id="tA" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><rect width="160" height="100" fill="#FFF4EA"/><rect width="62" height="44" fill="#E8262B"/><rect x="102" y="60" width="58" height="40" fill="#1F4FD8"/><rect x="118" width="42" height="26" fill="#FFD21F"/><rect x="62" width="5" height="100" fill="#14060D"/><rect y="44" width="160" height="5" fill="#14060D"/><rect x="102" y="44" width="5" height="56" fill="#14060D"/></symbol>
+<symbol id="tB" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><rect width="160" height="100" fill="#FF7FB6"/><use href="#lips" x="25" y="14" width="110" height="72" style="color:#E5177A"/></symbol>
+<symbol id="tC" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><rect width="160" height="100" fill="#1F2A7A"/><g transform="translate(80 52)"><circle r="32" fill="#FFF4EA" mask="url(#cres)" transform="rotate(-20)"/></g><use href="#star" x="18" y="14" width="14" height="14" style="color:#FFD21F"/><use href="#star" x="124" y="20" width="10" height="10" style="color:#FFF4EA"/><use href="#star" x="118" y="72" width="16" height="16" style="color:#FFD21F"/><use href="#star" x="26" y="70" width="8" height="8" style="color:#FFF4EA"/></symbol>
+<symbol id="tD" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><rect width="160" height="100" fill="#FFD21F"/><circle cx="80" cy="42" r="22" fill="#14060D"/><path d="M30 100C32 70 52 64 80 64C108 64 128 70 130 100Z" fill="#14060D"/></symbol>
+</defs></svg>
+
+<header><div class="wrap">
+  <a class="logo" href="#top"><svg aria-hidden="true"><use href="#lips"/></svg>Théodora</a>
+  <nav aria-label="Navigation principale"><a href="#top" data-nav="home">Accueil</a><a href="#actus">Actualités</a><a href="#concerts" data-nav="tour">Concerts</a><a href="#newsletter">Newsletter</a></nav>
+  <a class="btn sm" href="#newsletter">S'abonner</a>
+</div></header>
+
+<main id="top">
+<div id="v-home">
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Toute l'actu</span>
+    <h1>Toute l'actu de Théodora</h1>
+    <p>Clips, albums et concerts : tout ce qui se passe autour de l'artiste, au même endroit.</p>
+    <div class="cta-row"><a class="btn" href="#actus">Lire les actus</a><a class="btn ghost" href="#newsletter">Recevoir la newsletter</a></div>
+  </div>
+  <svg class="hero-art" viewBox="0 0 400 400" role="img" aria-label="Composition colorée avec une lune et des étoiles">
+    <rect width="400" height="400" fill="#E5177A"/>
+    <rect width="150" height="130" fill="#FFD21F"/><rect x="270" width="130" height="90" fill="#1F4FD8"/><rect y="250" width="110" height="150" fill="#FFB3D3"/><rect x="290" y="270" width="110" height="130" fill="#E8262B"/>
+    <rect x="150" width="8" height="400" fill="#14060D"/><rect y="130" width="400" height="8" fill="#14060D"/><rect x="270" width="8" height="270" fill="#14060D"/><rect y="250" width="400" height="8" fill="#14060D"/>
+    <circle cx="214" cy="194" r="62" fill="#FFF4EA"/><circle cx="242" cy="180" r="50" fill="#E5177A"/>
+    <use href="#star" x="168" y="150" width="22" height="22" style="color:#FFD21F"/><use href="#star" x="316" y="110" width="18" height="18" style="color:#FFF4EA"/><use href="#star" x="60" y="190" width="16" height="16" style="color:#FFF4EA"/><use href="#star" x="326" y="206" width="26" height="26" style="color:#FFD21F"/>
+  </svg>
+</div></section>
+
+<section class="s" id="une"><div class="wrap">
+  <h2><span>À la une</span></h2>
+  <div class="feat">
+    <article class="card big"><svg class="art" role="img" aria-label="Composition façon Mondrian"><use href="#tA"/></svg>
+      <div class="body"><span class="tag">Clip</span><h3 class="ttl">Fashion Designa : les références cachées du clip</h3>
+      <p class="txt">Ocelot, Warhol, Mondrian, Dalí : on décrypte l'univers visuel d'un clip pensé comme une œuvre d'art, signé Melchior Leroux.</p>
+      <div class="meta"><span>Clip · 3 min de lecture</span><button class="save" aria-pressed="false" aria-label="Enregistrer"><svg width="14" height="16" viewBox="0 0 12 14"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></div></article>
+    <div class="side">
+      <article class="card"><svg class="art" role="img" aria-label="Lèvres roses"><use href="#tB"/></svg><div class="body"><span class="tag">Album</span><h3 class="ttl">MEGA BBL : les featurings de la réédition</h3><p class="txt">Jul, Luidji, Juliette Armanet et les autres.</p></div></article>
+      <article class="card"><svg class="art" role="img" aria-label="Silhouette sur fond jaune"><use href="#tD"/></svg><div class="body"><span class="tag">Prix</span><h3 class="ttl">Révélation féminine aux Flammes</h3><p class="txt">Retour sur le prix qui a lancé sa consécration.</p></div></article>
+    </div>
+  </div>
+</div></section>
+
+<section class="s" id="actus"><div class="wrap">
+  <h2><span>Actualités</span></h2>
+  <div class="chips" role="group" aria-label="Filtrer par catégorie">
+    <button class="chip" data-f="all" aria-pressed="true">Tout</button><button class="chip" data-f="clip" aria-pressed="false">Clips</button><button class="chip" data-f="album" aria-pressed="false">Albums</button><button class="chip" data-f="univers" aria-pressed="false">Univers</button><button class="chip" data-f="prix" aria-pressed="false">Prix</button>
+  </div>
+  <div class="grid">
+    <article class="card" data-c="clip"><svg class="art"><use href="#tA"/></svg><div class="body"><span class="tag">Clip</span><h3 class="ttl">Fashion Designa : les références du clip</h3><p class="txt">Un clip pensé comme une œuvre d'art, signé Melchior Leroux.</p><div class="meta"><span>3 min de lecture</span><button class="save" aria-pressed="false" aria-label="Enregistrer"><svg width="14" height="16" viewBox="0 0 12 14"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></div></article>
+    <article class="card" data-c="album"><svg class="art"><use href="#tB"/></svg><div class="body"><span class="tag">Album</span><h3 class="ttl">MEGA BBL : la réédition en détail</h3><p class="txt">25 titres et des collaborations aux univers très variés.</p><div class="meta"><span>4 min de lecture</span><button class="save" aria-pressed="false" aria-label="Enregistrer"><svg width="14" height="16" viewBox="0 0 12 14"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></div></article>
+    <article class="card" data-c="univers"><svg class="art"><use href="#tC"/></svg><div class="body"><span class="tag">Univers</span><h3 class="ttl">Un univers entre lune et étoiles</h3><p class="txt">Le clin d'œil au Petit Prince dans ses visuels.</p><div class="meta"><span>2 min de lecture</span><button class="save" aria-pressed="false" aria-label="Enregistrer"><svg width="14" height="16" viewBox="0 0 12 14"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></div></article>
+    <article class="card" data-c="prix"><svg class="art"><use href="#tD"/></svg><div class="body"><span class="tag">Prix</span><h3 class="ttl">Révélation féminine aux Flammes</h3><p class="txt">Retour sur le prix qui a lancé sa consécration.</p><div class="meta"><span>2 min de lecture</span><button class="save" aria-pressed="false" aria-label="Enregistrer"><svg width="14" height="16" viewBox="0 0 12 14"><path d="M2 1.5h8v11L6 9.6 2 12.5z"/></svg></button></div></div></article>
+  </div>
+</div></section>
+
+</div>
+<div id="v-tour" hidden>
+<section class="thero"><div class="wrap">
+  <span class="eyebrow">En live</span>
+  <h1>Concerts</h1>
+  <p>Tous les concerts de Théodora : les prochaines dates et ceux déjà passés.</p>
+</div></section>
+<section class="s"><div class="wrap">
+  <h2><span>Prochaines dates</span></h2>
+  <div class="next"><div><h3>À annoncer</h3><p>Aucune date à venir n'est confirmée pour le moment. Inscris-toi à la newsletter pour être prévenu·e dès qu'un concert est annoncé.</p></div><a class="btn" href="#newsletter">Être prévenu·e</a></div>
+  <h2 class="grp"><span>Dates passées</span></h2>
+  <h3 class="sub">Festivals · été 2026</h3>
+  <div class="shows"><article class="show"><div class="dt"><b style="font-size:20px">20–23</b><span>AOÛT</span></div><div><h3>Charleville-Mézières</h3><p>Cabaret Vert</p></div><span class="pill">Terminé</span></article><article class="show"><div class="dt"><b>11</b><span>JUIN</span></div><div><h3>Nîmes</h3><p>Arènes de Nîmes</p></div><span class="pill full">Complet</span></article></div>
+  <h3 class="sub">MEGA BBL Tour · mars 2026</h3>
+  <div class="shows"><article class="show"><div class="dt"><b>16</b><span>MARS</span></div><div><h3>Bordeaux</h3><p>Arkéa Arena</p></div><span class="pill">Terminé</span></article><article class="show"><div class="dt"><b>17</b><span>MARS</span></div><div><h3>Nantes</h3><p>Zénith</p></div><span class="pill">Terminé</span></article><article class="show"><div class="dt"><b>20</b><span>MARS</span></div><div><h3>Lyon</h3><p>Halle Tony Garnier</p></div><span class="pill">Terminé</span></article><article class="show"><div class="dt"><b>21</b><span>MARS</span></div><div><h3>Toulouse</h3><p>Zénith</p></div><span class="pill">Terminé</span></article><article class="show"><div class="dt"><b>22</b><span>MARS</span></div><div><h3>Marseille</h3><p>Le Dôme</p></div><span class="pill">Terminé</span></article><article class="show"><div class="dt"><b>24</b><span>MARS</span></div><div><h3>Lille</h3><p>Zénith</p></div><span class="pill">Terminé</span></article><article class="show"><div class="dt"><b>25</b><span>MARS</span></div><div><h3>Bruxelles</h3><p>Forest National</p></div><span class="pill">Terminé</span></article><article class="show"><div class="dt"><b>29</b><span>MARS</span></div><div><h3>Paris</h3><p>Zénith</p></div><span class="pill full">Complet</span></article><article class="show"><div class="dt"><b>30</b><span>MARS</span></div><div><h3>Paris</h3><p>Zénith</p></div><span class="pill full">Complet</span></article><article class="show"><div class="dt"><b>31</b><span>MARS</span></div><div><h3>Paris</h3><p>Zénith</p></div><span class="pill full">Complet</span></article><article class="show"><div class="dt"><b>1</b><span>AVRIL</span></div><div><h3>Paris</h3><p>Zénith</p></div><span class="pill full">Complet</span></article></div>
+</div></section>
+</div>
+<section class="news" id="newsletter"><div class="wrap">
+  <div><h2>Ne rate rien</h2><p>Une newsletter avec toute l'actu de Théodora, directement dans ta boîte mail.</p></div>
+  <div><div class="mail"><input id="email" type="email" placeholder="ton@email.com" aria-label="Adresse e-mail"><button class="btn" id="sub">S'abonner</button></div><div class="ok" id="ok" role="status"></div></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© Théodora News · maquette de site, contenus fictifs</span><nav><a href="#top">Accueil</a><a href="#actus">Actualités</a><a href="#concerts">Concerts</a><a href="#newsletter">Newsletter</a></nav></div></footer>
+
+<script>
+document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){
+  var f=b.dataset.f;
+  document.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed',c===b?'true':'false')});
+  document.querySelectorAll('.grid .card').forEach(function(c){c.hidden=!(f==='all'||c.dataset.c===f)});
+})});
+document.querySelectorAll('.save').forEach(function(b){b.addEventListener('click',function(){
+  b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true')
+})});
+document.getElementById('sub').addEventListener('click',function(){
+  var v=document.getElementById('email').value.trim(),ok=document.getElementById('ok');
+  ok.textContent=/^\S+@\S+\.\S+$/.test(v)?'Merci, tu es bien inscrit·e !':'Entre une adresse e-mail valide.';
+});
+
+(function(){
+  var vh=document.getElementById('v-home'),vt=document.getElementById('v-tour');
+  function route(){
+    var h=location.hash,t=h==='#concerts';
+    vh.hidden=t;vt.hidden=!t;
+    document.querySelectorAll('nav a[data-nav]').forEach(function(a){
+      var on=(a.dataset.nav==='tour')===t&&(t||h===''||h==='#top');
+      if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+    });
+    if(t||h===''||h==='#top'){window.scrollTo(0,0)}
+    else{var el=document.querySelector(h);if(el)el.scrollIntoView()}
+  }
+  window.addEventListener('hashchange',route);route();
+})();
+</script>
+</body>
+</html>
